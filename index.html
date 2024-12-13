@@ -3,34 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villas & Cottages - Ananterra Resort</title>
+    <title>Ananterra Resort - Luxury Stay in Nature</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Same styles as homepage -->
     <style>
-        /* Copy all styles from homepage */
+        .font-tangerine {
+            font-family: 'Tangerine', cursive;
+        }
+        .font-lato {
+            font-family: 'Lato', sans-serif;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        .nav-transparent {
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        .nav-scrolled {
+            background-color: #8B4513;
+            transition: background-color 0.3s ease;
+        }
+        .nav-scrolled a {
+            color: white;
+        }
+        .nav-transparent a {
+            color: white;
+        }
+        .nav-transparent .logo {
+            color: white;
+        }
+        .nav-scrolled .logo {
+            color: white;
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background-color: #8B4513;
+            padding: 2rem;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 60;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+            display: block;
+        }
+        .book-now-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #8B4513;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            transition: transform 0.2s;
+        }
+        .book-now-button:hover {
+            transform: scale(1.1);
+        }
+        .section-light {
+            background-color: #FDFAF6;
+        }
+        .section-dark {
+            background-color: #F5E6D3;
+        }
     </style>
 </head>
 <body>
-    <!-- Same navigation as homepage -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50">
-        <!-- Copy navigation content -->
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="text-4xl font-tangerine italic logo">
+                    Ananterra
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="villas.html" class="hover:text-gray-300">Villas & Cottages</a>
+                    <a href="meetings.html" class="hover:text-gray-300">Meetings & Conferences</a>
+                    <a href="experience.html" class="hover:text-gray-300">Experience Nature</a>
+                    <a href="about.html" class="hover:text-gray-300">About Us</a>
+                    <a href="gallery.html" class="hover:text-gray-300">Gallery</a>
+                </div>
+                <button class="md:hidden menu-btn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <!-- Page Header -->
-    <div class="pt-24 bg-brown-50">
-        <div class="container mx-auto px-6 py-12">
-            <h1 class="text-6xl font-tangerine italic text-center mb-6">Villas & Cottages</h1>
-            <div class="max-w-3xl mx-auto">
-                <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p class="text-gray-600 mt-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="flex flex-col space-y-4">
+            <a href="villas.html" class="text-white hover:text-gray-300">Villas & Cottages</a>
+            <a href="meetings.html" class="text-white hover:text-gray-300">Meetings & Conferences</a>
+            <a href="experience.html" class="text-white hover:text-gray-300">Experience Nature</a>
+            <a href="about.html" class="text-white hover:text-gray-300">About Us</a>
+            <a href="gallery.html" class="text-white hover:text-gray-300">Gallery</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="relative h-screen">
+        <img src="/api/placeholder/1920/1080" alt="Drone shot of Ananterra" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-40">
+            <div class="container mx-auto px-6 h-full flex items-center">
+                <div class="text-white max-w-2xl">
+                    <h1 class="text-7xl font-tangerine italic mb-4">Welcome to Ananterra</h1>
+                    <p class="text-xl font-lato">Experience luxury amidst nature's embrace</p>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Villas & Cottages Section -->
+    <section id="villas" class="py-20 section-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-tangerine italic mb-12 text-center">Our Accommodations</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Premium Villa -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="/api/placeholder/600/400" alt="Premium Villa" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Premium Villa</h3>
+                        <p class="text-gray-600">Luxurious comfort with panoramic views</p>
+                    </div>
+                </div>
+                <!-- Eco Cottage -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="/api/placeholder/600/400" alt="Eco Cottage" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Eco Cottage</h3>
+                        <p class="text-gray-600">Sustainable living in nature's lap</p>
+                    </div>
+                </div>
+                <!-- Pool Villa -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="/api/placeholder/600/400" alt="Pool Villa" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pool Villa</h3>
+                        <p class="text-gray-600">Private pool with luxury amenities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meetings & Conferences -->
+    <section id="meetings" class="py-20 section-dark">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap items-center">
+                <div class="w-full md:w-1/2 mb-12 md:mb-0">
+                    <h2 class="text-5xl font-tangerine italic mb-6">Meetings & Conferences</h2>
+                    <p class="text-gray-600 mb-8">Host your corporate events, conferences, and celebrations in our state-of-the-art facilities surrounded by nature's tranquility.</p>
+                    <a href="meetings.html" class="bg-brown-600 text-white px-8 py-3 rounded-lg hover:bg-brown-700">Learn More</a>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <img src="/api/placeholder/800/600" alt="Conference Facility" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Nature -->
+    <section id="experience" class="py-20 section-light">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-tangerine italic mb-12 text-center">Experience Nature</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <img src="/api/placeholder/800/600" alt="Nature Experience" class="rounded-lg shadow-lg">
+                <div>
+                    <p class="text-gray-600">Immerse yourself in the natural beauty surrounding Ananterra. Explore hiking trails, witness stunning sunsets, and connect with nature in its purest form.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 section-dark">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-tangerine italic mb-12 text-center">Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- First 4 images (visible on both mobile and desktop) -->
+                <img src="/api/placeholder/400/300" alt="Gallery 1" class="w-full h-48 object-cover rounded-lg">
+                <img src="/api/placeholder/400/300" alt="Gallery 2" class="w-full h-48 object-cover rounded-lg">
+                <img src="/api/placeholder/400/300" alt="Gallery 3" class="w-full h-48 object-cover rounded-lg">
+                <img src="/api/placeholder/400/300" alt="Gallery 4" class="w-full h-48 object-cover rounded-lg">
+                
+                <!-- Additional images (visible only on desktop) -->
+                <img src="/api/placeholder/400/300" alt="Gallery 5" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 6" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 7" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 8" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 9" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 10" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 11" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 12" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 13" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 14" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 15" class="w-full h-48 object-cover rounded-lg hidden md:block">
+                <img src="/api/placeholder/400/300" alt="Gallery 16" class="w-full h-48 object-cover rounded-lg hidden md:block">
+            </div>
+            <!-- View More Button (visible only on mobile) -->
+            <div class="mt-8 text-center md:hidden">
+                <a href="gallery.html" class="inline-block px-6 py-3 bg-brown-600 text-white rounded-lg hover:bg-brown-700">View More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-20 section-light">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-5xl font-tangerine italic mb-8">Our Story</h2>
+                <p class="text-gray-600 mb-8">Discover the journey of the couple who transformed their dream into reality, creating this haven of luxury and nature at Ananterra.</p>
+                <img src="/api/placeholder/400/400" alt="Founders" class="rounded-full mx-auto mb-8">
+            </div>
+        </div>
+    </section>
 
     <!-- Floating Book Now Button -->
     <a href="#" class="book-now-button">
         Book<br>Now
     </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('nav');
+            const menuBtn = document.querySelector('.menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            function handleScroll() {
+                if (window.scrollY > 50) {
+                    nav.classList.remove('nav-transparent');
+                    nav.classList.add('nav-scrolled');
+                } else {
+                    nav.classList.add('nav-transparent');
+                    nav.classList.remove('nav-scrolled');
+                }
+            }
+            
+            menuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+            });
+            
+            nav.classList.add('nav-transparent');
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        });
+    </script>
 </body>
 </html>
