@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananterra Resort - Luxury Stay in Nature</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .font-tangerine {
+            font-family: 'Tangerine', cursive;
+        }
+        .font-lato {
+            font-family: 'Lato', sans-serif;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+        .nav-transparent {
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+        .nav-scrolled {
+            background-color: #8B4513;
+            transition: background-color 0.3s ease;
+        }
+        .nav-scrolled a {
+            color: white;
+        }
+        .nav-transparent a {
+            color: white;
+        }
+        .nav-transparent .logo {
+            color: white;
+        }
+        .nav-scrolled .logo {
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('nav');
+            
+            function handleScroll() {
+                if (window.scrollY > 50) {
+                    nav.classList.remove('nav-transparent');
+                    nav.classList.add('nav-scrolled');
+                } else {
+                    nav.classList.add('nav-transparent');
+                    nav.classList.remove('nav-scrolled');
+                }
+            }
+            
+            // Set initial state
+            nav.classList.add('nav-transparent');
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+            
+            // Call once to set initial state
+            handleScroll();
+        });
+    </script>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="text-4xl font-tangerine italic logo">
+                    Ananterra
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="hover:text-gray-600">Home</a>
+                    <a href="#villas" class="hover:text-gray-600">Villas & Cottages</a>
+                    <a href="#meetings" class="hover:text-gray-600">Meetings & Conferences</a>
+                    <a href="#experience" class="hover:text-gray-600">Experience Nature</a>
+                    <a href="#about" class="hover:text-gray-600">About Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative h-screen">
+        <img src="/api/placeholder/1920/1080" alt="Drone shot of Ananterra" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-40">
+            <div class="container mx-auto px-6 h-full flex items-center">
+                <div class="text-white max-w-2xl">
+                    <h1 class="text-7xl font-tangerine italic mb-4">Welcome to Ananterra</h1>
+                    <p class="text-xl font-lato">Experience luxury amidst nature's embrace</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Villas & Cottages Section -->
+    <section id="villas" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-tangerine italic mb-12 text-center">Our Accommodations</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Premium Villa -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="/api/placeholder/600/400" alt="Premium Villa" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Premium Villa</h3>
+                        <p class="text-gray-600">Luxurious comfort with panoramic views</p>
+                    </div>
+                </div>
+                <!-- Eco Cottage -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="/api/placeholder/600/400" alt="Eco Cottage" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Eco Cottage</h3>
+                        <p class="text-gray-600">Sustainable living in nature's lap</p>
+                    </div>
+                </div>
+                <!-- Pool Villa -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="/api/placeholder/600/400" alt="Pool Villa" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Pool Villa</h3>
+                        <p class="text-gray-600">Private pool with luxury amenities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meetings & Conferences -->
+    <section id="meetings" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap items-center">
+                <div class="w-full md:w-1/2 mb-12 md:mb-0">
+                    <h2 class="text-5xl font-tangerine italic mb-6">Meetings & Conferences</h2>
+                    <p class="text-gray-600 mb-8">Host your corporate events, conferences, and celebrations in our state-of-the-art facilities surrounded by nature's tranquility.</p>
+                    <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700">Learn More</button>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <img src="/api/placeholder/800/600" alt="Conference Facility" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Nature -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-tangerine italic mb-12 text-center">Experience Nature</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <img src="/api/placeholder/800/600" alt="Nature Experience" class="rounded-lg shadow-lg">
+                <div>
+                    <p class="text-gray-600">Immerse yourself in the natural beauty surrounding Ananterra. Explore hiking trails, witness stunning sunsets, and connect with nature in its purest form.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-5xl font-tangerine italic mb-8">Our Story</h2>
+                <p class="text-gray-600 mb-8">Discover the journey of the couple who transformed their dream into reality, creating this haven of luxury and nature at Ananterra.</p>
+                <img src="/api/placeholder/400/400" alt="Founders" class="rounded-full mx-auto mb-8">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p>Email: info@ananterra.com</p>
+                    <p>Phone: +91 XXX XXX XXXX</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul>
+                        <li><a href="#villas">Accommodations</a></li>
+                        <li><a href="#meetings">Meetings</a></li>
+                        <li><a href="#experience">Experiences</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-gray-300">Instagram</a>
+                        <a href="#" class="hover:text-gray-300">Facebook</a>
+                        <a href="#" class="hover:text-gray-300">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
